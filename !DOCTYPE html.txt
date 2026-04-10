@@ -1,0 +1,122 @@
+ <!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications - Assurance Gallery</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9f9ff;
+    }
+    .font-manrope { font-family: 'Manrope', sans-serif; }
+  </style>
+</head>
+
+<body class="text-gray-800">
+
+<!-- Header -->
+<header class="fixed top-0 w-full bg-white shadow z-50">
+  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+    <h1 class="font-manrope font-bold text-xl">Assurance Gallery</h1>
+
+    <button onclick="toggleTheme()" class="text-sm px-3 py-1 bg-gray-200 rounded">
+      Toggle Theme
+    </button>
+  </div>
+</header>
+
+<main class="pt-24 max-w-3xl mx-auto p-6">
+
+<!-- Title -->
+<h2 class="text-2xl font-bold mb-2">Notifications</h2>
+<p class="text-gray-500 mb-6">Manage warranty alerts</p>
+
+<!-- WhatsApp Section -->
+<div class="bg-white p-6 rounded-xl shadow mb-6">
+
+  <div class="flex justify-between items-center mb-4">
+    <h3 class="font-semibold">WhatsApp Alerts</h3>
+
+    <input id="toggle" type="checkbox" class="w-5 h-5">
+  </div>
+
+  <label for="phone" class="text-sm block mb-1">Phone Number</label>
+  <input id="phone" type="text"
+    placeholder="+91XXXXXXXXXX"
+    class="w-full border p-3 rounded mb-3">
+
+  <p class="text-xs text-gray-500">
+    Your number is secure and used only for alerts.
+  </p>
+
+</div>
+
+<!-- Alert Schedule -->
+<div class="bg-white p-6 rounded-xl shadow mb-6">
+  <h3 class="font-semibold mb-4">Alert Schedule</h3>
+
+  <div class="space-y-3">
+    <div class="flex justify-between">
+      <span>30 Days Before</span>
+      <span>✔</span>
+    </div>
+
+    <div class="flex justify-between">
+      <span>7 Days Before</span>
+      <span>✔</span>
+    </div>
+
+    <div class="flex justify-between">
+      <span>On Expiry Day</span>
+      <span>○</span>
+    </div>
+  </div>
+</div>
+
+<!-- Account -->
+<div class="bg-white p-6 rounded-xl shadow">
+  <h3 class="font-semibold mb-4">Account</h3>
+
+  <div class="flex justify-between mb-2">
+    <span>Email</span>
+    <span class="text-gray-500">john@example.com</span>
+  </div>
+
+  <div class="flex justify-between mb-2 cursor-pointer">
+    <span>Change Password</span>
+    <span>›</span>
+  </div>
+
+  <div class="text-red-500 cursor-pointer mt-4">
+    Sign Out
+  </div>
+</div>
+
+</main>
+
+<!-- JS -->
+<script>
+  // Toggle handler
+  document.getElementById("toggle").addEventListener("change", function() {
+    alert("WhatsApp Alerts: " + (this.checked ? "Enabled" : "Disabled"));
+  });
+
+  // Theme toggle
+  function toggleTheme() {
+    document.documentElement.classList.toggle("dark");
+    document.body.classList.toggle("bg-gray-900");
+    document.body.classList.toggle("text-white");
+  }
+</script>
+
+</body>
+</html>
